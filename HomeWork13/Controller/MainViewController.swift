@@ -6,17 +6,14 @@
 //
 
 import UIKit
-import Alamofire
-import Kingfisher
 
-
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     //MARK: - @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - Properties
-    let images = ["picture1", "picture2", "picture4", "picture5", "picture6", "picture7", "picture8", "picture9", "picture10"]
+    let imagesArray = [UIImage]()
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -25,16 +22,27 @@ class MainViewController: UIViewController {
         collectionView.dataSource = self
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    //MARK: - IBActions
+    @IBAction func saveImageButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Library",
+                                      style: .default,
+                                      handler: { [weak self] _ in
+            self?.openGallery()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel",
+                                      style: .cancel))
+        present(alert, animated: true)
+    }
 }
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return imagesArray.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! ImageCell
-        let imageName = images[indexPath.item]
-        let image = UIImage(named: imageName)
+        let image = imagesArray[indexPath.item]
         cell.dishImageView.image = image
         return cell
     }
@@ -51,5 +59,21 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let sectionsInserts = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         return sectionsInserts
+    }
+}
+
+private extension MainViewController{
+    func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Warning", message: "No permission", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

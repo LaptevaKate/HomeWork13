@@ -381,14 +381,25 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsn-Un-NkO">
+                                <rect key="frame" x="339" y="64" width="55" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus.app.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="saveImageButtonTapped:" destination="TmF-d7-tD0" eventType="touchUpInside" id="vPV-ON-sWk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UwD-iI-Bz0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Vsq-fA-Oqo" firstAttribute="top" secondItem="UwD-iI-Bz0" secondAttribute="top" id="Jaz-7B-58i"/>
+                            <constraint firstItem="UwD-iI-Bz0" firstAttribute="trailing" secondItem="Wsn-Un-NkO" secondAttribute="trailing" constant="20" id="NwO-TZ-INS"/>
                             <constraint firstItem="UwD-iI-Bz0" firstAttribute="bottom" secondItem="Vsq-fA-Oqo" secondAttribute="bottom" id="URy-uc-Txa"/>
                             <constraint firstItem="UwD-iI-Bz0" firstAttribute="trailing" secondItem="Vsq-fA-Oqo" secondAttribute="trailing" id="Z5j-OC-S4Y"/>
+                            <constraint firstItem="Wsn-Un-NkO" firstAttribute="leading" secondItem="UwD-iI-Bz0" secondAttribute="leading" constant="339" id="qHY-ur-bFd"/>
                             <constraint firstItem="Vsq-fA-Oqo" firstAttribute="leading" secondItem="UwD-iI-Bz0" secondAttribute="leading" id="trT-pR-XqX"/>
+                            <constraint firstItem="Wsn-Un-NkO" firstAttribute="top" secondItem="UwD-iI-Bz0" secondAttribute="top" constant="20" id="y2C-S3-cjW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ImageDishes" id="Ool-uT-Pun"/>
@@ -403,6 +414,7 @@
     </scenes>
     <resources>
         <image name="mainphoto" width="1770" height="1180"/>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
