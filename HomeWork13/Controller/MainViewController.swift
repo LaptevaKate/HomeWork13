@@ -7,13 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class MainViewController: UIViewController {
     
     //MARK: - @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - Properties
-    let imagesArray = [UIImage]()
+    var imagesArray = ImageSavingSettings.getAllImages()
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -22,10 +22,11 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate & UI
         collectionView.dataSource = self
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
     //MARK: - IBActions
-    @IBAction func saveImageButtonTapped(_ sender: Any) {
+    @IBAction func plusImageButtonTapped(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Library",
+        alert.addAction(UIAlertAction(title: "Gallery",
                                       style: .default,
                                       handler: { [weak self] _ in
             self?.openGallery()
@@ -61,8 +62,17 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         return sectionsInserts
     }
 }
-
-private extension MainViewController{
+extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[.originalImage] as? UIImage {
+            imagesArray += [pickedImage]
+            ImageSavingSettings.add(pickedImage)
+            collectionView.reloadData()
+    }
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
+private extension MainViewController {
     func openGallery() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
