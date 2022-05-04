@@ -30,10 +30,10 @@ class MainViewController: UIViewController {
         downloader.downloadImage(with: url) { result in
             switch result {
             case .success(let value):
-                self.presentAlert(text: "Your image in Gallery")
+                self.presentAlert(text: "Success!Your image in Gallery")
                 UIImageWriteToSavedPhotosAlbum(value.image, nil, nil, nil)
             case .failure(let error):
-                self.presentAlert(text: "Check the kind of url")
+                self.presentAlert(text: "Task wasn't completed!Check the kind of url")
             }
         }
     }
@@ -51,12 +51,11 @@ class MainViewController: UIViewController {
                                       handler: { [weak self] _ in
             self?.openCamera()
         }))
-        alert.addAction(UIAlertAction(title: "Load from Link to Gallery",
+        alert.addAction(UIAlertAction(title: "Download from URL to Gallery",
                                       style: .default,
                                       handler: { [weak self] _ in
             self?.openLink()
         }))
-        
         alert.addAction(UIAlertAction(title: "Cancel",
                                       style: .cancel))
         present(alert, animated: true)

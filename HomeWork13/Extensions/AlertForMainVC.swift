@@ -27,7 +27,6 @@ extension MainViewController {
                                       handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
 
     func openCamera() {
@@ -46,7 +45,6 @@ extension MainViewController {
                                       handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
 
     func openLink() {
@@ -61,7 +59,7 @@ extension MainViewController {
     }
 
     func presentUrlAlert() {
-        let alert = UIAlertController(title: "Load from URL to Gallery",
+        let alert = UIAlertController(title: "Download from URL to Gallery",
                                   message: "Enter url to download picture",
                                   preferredStyle: .alert)
         alert.addTextField { textField in
@@ -94,5 +92,4 @@ extension MainViewController {
         alert.addAction(okAction)
         self.present(alert, animated: true)
     }
-    
 }
