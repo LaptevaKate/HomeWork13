@@ -21,6 +21,8 @@
 		5EBBEDF12815600100621845 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBEDF02815600100621845 /* ImageCell.swift */; };
 		5EBBEDF32815C65600621845 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBEDF22815C65600621845 /* MainViewController.swift */; };
 		5EC37CE0281AC457007AAC79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5EC37CDF281AC457007AAC79 /* Alamofire */; };
+		5EC71723281E871200D4C6A0 /* ImageSavingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71722281E871200D4C6A0 /* ImageSavingSettings.swift */; };
+		5EF0A93B28205AEF00CAE2E9 /* AlertForMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0A93A28205AEF00CAE2E9 /* AlertForMainVC.swift */; };
 		A1FB31255CC6B98D5AB02389 /* Pods_HomeWork13.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3713D216ACB3EC2885C390A8 /* Pods_HomeWork13.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		5EBBEDE82815531C00621845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EBBEDF02815600100621845 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		5EBBEDF22815C65600621845 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5EC71722281E871200D4C6A0 /* ImageSavingSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSavingSettings.swift; sourceTree = "<group>"; };
+		5EF0A93A28205AEF00CAE2E9 /* AlertForMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForMainVC.swift; sourceTree = "<group>"; };
 		9B6BA22CBB60A712A126FCB2 /* Pods-HomeWork13.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork13.release.xcconfig"; path = "Target Support Files/Pods-HomeWork13/Pods-HomeWork13.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +76,7 @@
 			children = (
 				5E109C8B281881A300F92B06 /* InputView.swift */,
 				5E109C89281874AF00F92B06 /* AlertProtocol.swift */,
+				5EF0A93A28205AEF00CAE2E9 /* AlertForMainVC.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 				5EBBEDDC2815531B00621845 /* SceneDelegate.swift */,
 				5EBBEDDA2815531B00621845 /* AppDelegate.swift */,
 				5E109C8728186BA000F92B06 /* SaveUserInfoViewController.swift */,
+				5EC71722281E871200D4C6A0 /* ImageSavingSettings.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -204,7 +210,7 @@
 			);
 			mainGroup = 5EBBEDCE2815531B00621845;
 			packageReferences = (
-				5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
+				5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 5EBBEDD82815531B00621845 /* Products */;
 			projectDirPath = "";
@@ -279,9 +285,11 @@
 				5EBBEDF12815600100621845 /* ImageCell.swift in Sources */,
 				5EBBEDDB2815531B00621845 /* AppDelegate.swift in Sources */,
 				5E109C8828186BA000F92B06 /* SaveUserInfoViewController.swift in Sources */,
+				5EF0A93B28205AEF00CAE2E9 /* AlertForMainVC.swift in Sources */,
 				5E109C8628186B1400F92B06 /* UserInfo.swift in Sources */,
 				5EBBEDDD2815531B00621845 /* SceneDelegate.swift in Sources */,
 				5E109C8A281874AF00F92B06 /* AlertProtocol.swift in Sources */,
+				5EC71723281E871200D4C6A0 /* ImageSavingSettings.swift in Sources */,
 				5E109C8C281881A300F92B06 /* InputView.swift in Sources */,
 				5E109C802818687300F92B06 /* SignInViewController.swift in Sources */,
 				5EBBEDF32815C65600621845 /* MainViewController.swift in Sources */,
@@ -506,7 +514,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -519,7 +527,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		5EC37CDF281AC457007AAC79 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
