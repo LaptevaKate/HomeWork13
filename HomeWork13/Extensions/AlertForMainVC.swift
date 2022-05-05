@@ -59,7 +59,7 @@ extension MainViewController {
     }
 
     func presentUrlAlert() {
-        let alert = UIAlertController(title: "Download from URL to Gallery",
+        let alert = UIAlertController(title: "Download from URL",
                                   message: "Enter url to download picture",
                                   preferredStyle: .alert)
         alert.addTextField { textField in

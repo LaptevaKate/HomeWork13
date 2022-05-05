@@ -32,8 +32,9 @@ class MainViewController: UIViewController {
             case .success(let value):
                 self.presentAlert(text: "Success!Your image in Gallery")
                 UIImageWriteToSavedPhotosAlbum(value.image, nil, nil, nil)
+                self.pickedImage(value.image)
             case .failure(let error):
-                self.presentAlert(text: "Task wasn't completed!Check the kind of url")
+                self.presentAlert(text: "Image request was failed.\(error.localizedDescription)")
             }
         }
     }
@@ -51,7 +52,7 @@ class MainViewController: UIViewController {
                                       handler: { [weak self] _ in
             self?.openCamera()
         }))
-        alert.addAction(UIAlertAction(title: "Download from URL to Gallery",
+        alert.addAction(UIAlertAction(title: "Download from URL",
                                       style: .default,
                                       handler: { [weak self] _ in
             self?.openLink()
@@ -94,11 +95,15 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
-            imagesArray += [pickedImage]
-            ImageSavingSettings.add(pickedImage)
-            collectionView.reloadData()
+            self.pickedImage(pickedImage)
         }
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    private func pickedImage(_ image: UIImage) {
+        imagesArray += [image]
+        ImageSavingSettings.add(image)
+        collectionView.reloadData()
     }
 }
 
