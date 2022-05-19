@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5E109C802818687300F92B06 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E109C7F2818687300F92B06 /* SignInViewController.swift */; };
-		5E109C822818688400F92B06 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E109C812818688400F92B06 /* SignUpViewController.swift */; };
+		5E109C822818688400F92B06 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E109C812818688400F92B06 /* SettingsViewController.swift */; };
 		5E109C8628186B1400F92B06 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E109C8528186B1400F92B06 /* UserInfo.swift */; };
-		5E109C8828186BA000F92B06 /* SaveUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E109C8728186BA000F92B06 /* SaveUserInfoViewController.swift */; };
 		5E109C8A281874AF00F92B06 /* AlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E109C89281874AF00F92B06 /* AlertProtocol.swift */; };
 		5E109C8C281881A300F92B06 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E109C8B281881A300F92B06 /* InputView.swift */; };
+		5E4F2DC128366B1800E385C7 /* PasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4F2DC028366B1800E385C7 /* PasswordManager.swift */; };
 		5EBBEDDB2815531B00621845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBEDDA2815531B00621845 /* AppDelegate.swift */; };
 		5EBBEDDD2815531B00621845 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBEDDC2815531B00621845 /* SceneDelegate.swift */; };
 		5EBBEDE22815531C00621845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBBEDE02815531C00621845 /* Main.storyboard */; };
@@ -20,7 +20,6 @@
 		5EBBEDE72815531C00621845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBBEDE52815531C00621845 /* LaunchScreen.storyboard */; };
 		5EBBEDF12815600100621845 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBEDF02815600100621845 /* ImageCell.swift */; };
 		5EBBEDF32815C65600621845 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBBEDF22815C65600621845 /* MainViewController.swift */; };
-		5EC37CE0281AC457007AAC79 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5EC37CDF281AC457007AAC79 /* Alamofire */; };
 		5EC71723281E871200D4C6A0 /* ImageSavingSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC71722281E871200D4C6A0 /* ImageSavingSettings.swift */; };
 		5EF0A93B28205AEF00CAE2E9 /* AlertForMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF0A93A28205AEF00CAE2E9 /* AlertForMainVC.swift */; };
 		A1FB31255CC6B98D5AB02389 /* Pods_HomeWork13.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3713D216ACB3EC2885C390A8 /* Pods_HomeWork13.framework */; };
@@ -30,11 +29,11 @@
 		191FF66A283D34EEE18E7852 /* Pods-HomeWork13.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork13.debug.xcconfig"; path = "Target Support Files/Pods-HomeWork13/Pods-HomeWork13.debug.xcconfig"; sourceTree = "<group>"; };
 		3713D216ACB3EC2885C390A8 /* Pods_HomeWork13.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork13.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E109C7F2818687300F92B06 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		5E109C812818688400F92B06 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5E109C812818688400F92B06 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5E109C8528186B1400F92B06 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		5E109C8728186BA000F92B06 /* SaveUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserInfoViewController.swift; sourceTree = "<group>"; };
 		5E109C89281874AF00F92B06 /* AlertProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertProtocol.swift; sourceTree = "<group>"; };
 		5E109C8B281881A300F92B06 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		5E4F2DC028366B1800E385C7 /* PasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordManager.swift; sourceTree = "<group>"; };
 		5EBBEDD72815531B00621845 /* HomeWork13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBBEDDA2815531B00621845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EBBEDDC2815531B00621845 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +54,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1FB31255CC6B98D5AB02389 /* Pods_HomeWork13.framework in Frameworks */,
-				5EC37CE0281AC457007AAC79 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +93,7 @@
 			children = (
 				5EBBEDF22815C65600621845 /* MainViewController.swift */,
 				5E109C7F2818687300F92B06 /* SignInViewController.swift */,
-				5E109C812818688400F92B06 /* SignUpViewController.swift */,
+				5E109C812818688400F92B06 /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -113,10 +111,10 @@
 		5E109C94281955BE00F92B06 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5EC71722281E871200D4C6A0 /* ImageSavingSettings.swift */,
+				5E4F2DC028366B1800E385C7 /* PasswordManager.swift */,
 				5EBBEDDC2815531B00621845 /* SceneDelegate.swift */,
 				5EBBEDDA2815531B00621845 /* AppDelegate.swift */,
-				5E109C8728186BA000F92B06 /* SaveUserInfoViewController.swift */,
-				5EC71722281E871200D4C6A0 /* ImageSavingSettings.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -179,7 +177,6 @@
 			);
 			name = HomeWork13;
 			packageProductDependencies = (
-				5EC37CDF281AC457007AAC79 /* Alamofire */,
 			);
 			productName = HomeWork13;
 			productReference = 5EBBEDD72815531B00621845 /* HomeWork13.app */;
@@ -210,7 +207,6 @@
 			);
 			mainGroup = 5EBBEDCE2815531B00621845;
 			packageReferences = (
-				5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 5EBBEDD82815531B00621845 /* Products */;
 			projectDirPath = "";
@@ -281,11 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E109C822818688400F92B06 /* SignUpViewController.swift in Sources */,
+				5E109C822818688400F92B06 /* SettingsViewController.swift in Sources */,
 				5EBBEDF12815600100621845 /* ImageCell.swift in Sources */,
 				5EBBEDDB2815531B00621845 /* AppDelegate.swift in Sources */,
-				5E109C8828186BA000F92B06 /* SaveUserInfoViewController.swift in Sources */,
 				5EF0A93B28205AEF00CAE2E9 /* AlertForMainVC.swift in Sources */,
+				5E4F2DC128366B1800E385C7 /* PasswordManager.swift in Sources */,
 				5E109C8628186B1400F92B06 /* UserInfo.swift in Sources */,
 				5EBBEDDD2815531B00621845 /* SceneDelegate.swift in Sources */,
 				5E109C8A281874AF00F92B06 /* AlertProtocol.swift in Sources */,
@@ -448,6 +444,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +474,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -512,25 +510,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5EC37CDF281AC457007AAC79 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5EC37CDE281AC457007AAC79 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5EBBEDCF2815531B00621845 /* Project object */;
 }

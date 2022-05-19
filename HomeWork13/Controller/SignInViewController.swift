@@ -10,44 +10,85 @@ import UIKit
 class SignInViewController: UIViewController, AlertPresenter {
     
     //MARK: - @IBOutlet
-    @IBOutlet weak var userEmailTextField: UITextField!
-    @IBOutlet weak var userPasswordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var repeatPasswordLabel: UILabel!
+    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var recoverPasswordButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
     
-    //MARK: - ViewDidLoad
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let doneToolBar = UIToolbar().addDoneButtonOnKeyboard()
         let done: UIBarButtonItem = UIBarButtonItem(title: "OK", style: .done, target: self, action: #selector(self.doneButtonAction))
         doneToolBar.items?.append(done)
-        userEmailTextField.inputAccessoryView = doneToolBar
-        userPasswordTextField.inputAccessoryView = doneToolBar
+        passwordTextField.inputAccessoryView = doneToolBar
+        repeatPasswordTextField.inputAccessoryView = doneToolBar
+        passwordTextField.becomeFirstResponder()
+        if !PasswordManager.shared.firstAutorization {
+            repeatPasswordTextField.isHidden = true
+            repeatPasswordLabel.isHidden = true
+            signInButton.setTitle("Log In", for: .normal)
+        } else {
+            recoverPasswordButton.isHidden = true
+            signInButton.setTitle("Sign In", for: .normal)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        passwordTextField.text = ""
     }
     
     //MARK: - Methods
-    private func checkForRegistration() {
-        guard let userEmail = userEmailTextField.text, let userPassword = userPasswordTextField.text, !userEmail.isEmpty || !userPassword.isEmpty else {
-            showAlert(self, type: .empty)
+    @objc private func doneButtonAction() {
+        passwordTextField.resignFirstResponder()
+        repeatPasswordTextField.resignFirstResponder()
+    }
+   
+    //MARK: - IBActions
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        guard let password = passwordTextField.text else {
             return
         }
-        if let password = SaveUserInfo.shared.userPassword, let email = SaveUserInfo.shared.userEmail {
-            if password == userPassword && email == userEmail {
-                let mainVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "mainVC") as! MainViewController
-                self.navigationController?.pushViewController(mainVC, animated: true)
-            } else if password != userPassword || email != userEmail {
-                showAlert(self, type: .notValid)
+        if PasswordManager.shared.firstAutorization {
+            if password.isEmpty {
+                showAlert(self, type: .empty)
+            } else {
+                if password == repeatPasswordTextField.text {
+                    PasswordManager.shared.save(password)
+                    createViewController(String(describing: MainViewController.self))
+                } else {
+                    showAlert(self, type: .repeatPassword)
+                }
             }
         } else {
-            showAlert(self, type: .noData)
+            if PasswordManager.shared.validate(password) {
+                createViewController(String(describing: MainViewController.self))
+            } else {
+                showAlert(self, type: .noData)
+            }
         }
     }
 
-    @objc private func doneButtonAction() {
-        userPasswordTextField.resignFirstResponder()
-        userEmailTextField.resignFirstResponder()
+    @IBAction func recoverPasswordButtonPressed(_ sender: UIButton) {
+        createViewController(String(describing: SettingsViewController.self))
     }
-    
-    //MARK: - IBActions
-    @IBAction func signInButtonTapped(_ sender: Any) {
-        checkForRegistration()
+}
+
+// MARK: - Extension UITextFieldDelegate
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}
+// MARK: - UIViewController
+extension UIViewController {
+    func createViewController(_ identifier: String) {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyboard.instantiateViewController(identifier: identifier)
+        navigationController?.pushViewController(newViewController, animated: true)
+        navigationController?.modalPresentationStyle = .fullScreen
     }
 }

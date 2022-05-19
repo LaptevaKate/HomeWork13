@@ -1,16 +1,20 @@
 PODS:
-  - Kingfisher (7.2.1)
+  - Kingfisher (7.2.2)
+  - SwiftyKeychainKit (1.0.0-beta.2)
 
 DEPENDENCIES:
   - Kingfisher (~> 7.2)
+  - SwiftyKeychainKit (= 1.0.0-beta.2)
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - SwiftyKeychainKit
 
 SPEC CHECKSUMS:
-  Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
+  Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
+  SwiftyKeychainKit: dcbb1098d4fa1548282287a6beb186f9393e9025
 
-PODFILE CHECKSUM: a7080701ab73be6ddb33cb53dcbf4f1bcec16591
+PODFILE CHECKSUM: 8e74b8bfad588468ac016cdba1e61925f96211d8
 
 COCOAPODS: 1.11.3
